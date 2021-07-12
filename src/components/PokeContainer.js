@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import Table from 'react-bootstrap/Table';
+import PokeCards from './PokeCards';
 import PokeDetails from './PokeDetails';
 
-const PokeContainer = (props) => {
+const PokeContainer = () => {
 
     const [allPokemons, setAllPokemons] = useState([]);
     const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=5');
-    const {history} = props;
 
     const getAllPokemons = async () => {
         const response = await fetch(loadMore)
@@ -34,42 +33,17 @@ const PokeContainer = (props) => {
 
     return(
     
-        <div className="pokemon-container">
-          <div className="pokemon-content" style={{"display" : "flex", "flexWrap" : "wrap"}}>
-            {allPokemons.map((pokemon, index) => 
-              <PokeDetails
-                name={pokemon.name}
-                image={pokemon.sprites.other.dream_world.front_default}
-                type={pokemon.types[0].type.name}
-                ability={pokemon.abilities[0].ability.name}
-                height={pokemon.height}
-                weight={pokemon.weight}
-                move={pokemon.moves[0].move.name}
-                key={index}
-                onClick={() => history.push(`/${pokemon.id}`)}
-              />
-            )}
-          </div>
-          {/* {allPokemons.map((pokemon) =>
-            <Table>
-              <thead>
-                <tr>
-                  <th># ID</th>
-                  <th>Name</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{pokemon.id}</td>
-                  <td>{pokemon.name}</td>
-                </tr>
-              </tbody>
-            </Table>
-          )} */}
-        {/* <button type="button" class="btn btn-outline-secondary" onClick={() => getAllPokemons()} style={{"marginLeft" : "45%", "textAlign" : "center"}}>Load More</button> */}
-      </div>
-    )
-
+      <div className="pokemon-container">
+        {allPokemons.map((pokemon) =>
+          <PokeCards
+          name={pokemon.name}
+          image={pokemon.sprites.other.dream_world.front_default}
+          type={pokemon.types[0].type.name}
+        />
+        )}
+      <button type="button" class="btn btn-outline-secondary" onClick={() => getAllPokemons()} style={{"marginLeft" : "45%", "textAlign" : "center"}}>Load More</button>
+    </div>
+  )
 }
 
 export default PokeContainer;
