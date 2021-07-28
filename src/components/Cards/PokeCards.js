@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
+import { withNamespaces } from 'react-i18next';
 import PokeModal from '../Modal/PokeModal';
 
-const PokeCards = ({id, name, image, height, type, weight, ability}) => {
+const PokeCards = ({id, name, image, height, type, weight, ability, t}) => {
     const [openModal, setOpenModal] = useState(false);    
     return (
 
         <div className="col-md-3" key={id}>
-            <div className="card m-3">
+            <div className="card border-primary m-3">
                 <div className="card-img-top d-flex justify-content-center align-items-center" style={{'height':"200px"}}>
                     <img src={image} alt={name} className="w-75 h-50"/>
                 </div>
             <div className="card-body">
                 <h5 className="card-title text-center">{name}</h5>
                 <h5 className="card-text text-center">#0{id}</h5>
-                <button onClick={() => setOpenModal(true)} className="btn btn-primary btn-sm" style={{"marginLeft" : "4%"}}>pokemon details</button>
+                <button onClick={() => setOpenModal(true)} className="btn btn-secondary btn-sm" style={{"marginLeft" : "30px"}}>{t('pokemon details')}</button>
             </div>
             {openModal && 
                 <PokeModal 
@@ -32,4 +33,4 @@ const PokeCards = ({id, name, image, height, type, weight, ability}) => {
     )
 }
 
-export default PokeCards;
+export default withNamespaces()(PokeCards);

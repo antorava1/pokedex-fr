@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { withNamespaces } from 'react-i18next';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import Button from '@material-ui/core/Button';
 import './Modal.css';
 
 
-function PokeModal({closeModal, pokemonName, pokemonId, pokemonImg, pokemonHeight, pokemonType, pokemonWeight, pokemonAbility}) {
+function PokeModal({closeModal, pokemonName, pokemonId, pokemonImg, pokemonHeight, pokemonType, pokemonWeight, pokemonAbility, t}) {
     return(
 
         <div className="modal">
@@ -13,7 +14,7 @@ function PokeModal({closeModal, pokemonName, pokemonId, pokemonImg, pokemonHeigh
                 
                 <Modal isOpen={true}>
                         <ModalHeader className="modal-header" style={{display: 'block'}}>
-                            <Button className="btn-close btn-outline-dark" style={{float: 'right'}} onClick={() => closeModal(false)}/>
+                            <Button class="btn-close btn-primary" style={{float: 'right'}} onClick={() => closeModal(false)}/>
                             <h5 className="modal-title">{pokemonName} #0{pokemonId}</h5>
                         </ModalHeader> 
                             <ModalBody className="modal-body">   
@@ -23,11 +24,11 @@ function PokeModal({closeModal, pokemonName, pokemonId, pokemonImg, pokemonHeigh
                                 </div>                       
                                 <div className="form-group row">
                                     <div className="col-sm-6">
-                                        <label htmlFor="height">Height</label>
+                                        <label htmlFor="height">{t('height')}</label>
                                         <input className="form-control" type="number" name="height" id="height" readOnly value={pokemonHeight}/>
                                     </div>
                                     <div className="col-sm-6">
-                                        <label htmlFor="type">Type</label>
+                                        <label htmlFor="type">{t('type')}</label>
                                             {pokemonType === "grass" ?
                                                 <input className="form-control grass" type="text" name="type" id="type" readOnly value={pokemonType}/> : ""}
                                             {pokemonType  === "fire" ?
@@ -70,15 +71,18 @@ function PokeModal({closeModal, pokemonName, pokemonId, pokemonImg, pokemonHeigh
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-sm-6">
-                                        <label htmlFor="weight" className="">Weight</label>
+                                        <label htmlFor="weight" className="">{t('weight')}</label>
                                         <input className="form-control" type="number" name="weight" id="weight" readOnly value={pokemonWeight}/>
                                     </div>
                                     <div className="col-sm-6">
-                                        <label htmlFor="abilities" className="">Abilities</label>
+                                        <label htmlFor="abilities" className="">{t('abilities')}</label>
                                         <input className="form-control" type="text" name="abilities" id="abilities" readOnly value={pokemonAbility}/>
                                     </div>
                                 </div>
                             </ModalBody>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={() => closeModal(false)}>{t('go back')}</button>
+                            </div>
                     </Modal>
                 </div>
             </div>
@@ -86,4 +90,4 @@ function PokeModal({closeModal, pokemonName, pokemonId, pokemonImg, pokemonHeigh
     )
 };
         
-export default PokeModal;
+export default withNamespaces()(PokeModal);
