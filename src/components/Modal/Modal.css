@@ -1,0 +1,209 @@
+.modalBackground{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(219, 103, 190, 0.39);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer{
+    width: 600px;
+    height: 280px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: black;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+    color: black;
+}
+
+.closeBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.closeButton button {
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.body {
+    flex: 50%;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    flex-direction: row;
+    color: black;
+}
+
+.section1 {
+    display: inline-block;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-left: 20%;
+    font-size: 25px;
+    color: black;
+}
+
+.section2 {
+    display: inline-block;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-left: 25%;
+    font-size: 25px;
+    color: black;
+}
+
+.modalImg {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    display: flex;
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+.normal {
+    background-color: lavender;
+    border-color: gainsboro;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.fighting {
+    background-color: firebrick;
+    border-color: darkred;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.flying {
+    background-color: rgb(236, 236, 109);
+    border-color: rgb(179, 179, 0);
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.poison {
+    background-color: mediumpurple;
+    border-color: blueviolet;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.ground {
+    background-color: burlywood;
+    border-color: tan;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.rock {
+    background-color: peru;
+    border-color: chocolate;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.bug {
+    background-color: yellowgreen;
+    border-color: olivedrab;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.ghost {
+    background-color: purple;
+    border-color: indigo;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.steel {
+    background-color: lightgray;
+    border-color: silver;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.fire {
+    background-color: crimson;
+    border-color: firebrick;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.water {
+    background-color: royalblue;
+    border-color: mediumslateblue;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.electric {
+    background-color: yellow;
+    border-color: gold;
+    border-radius: 0.5rem;
+    color: black;
+}
+.psychic {
+    background-color: violet;
+    border-color: plum;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.ice {
+    background-color: aquamarine;
+    border-color: paleturquoise;
+    border-radius: 0.5rem;
+    color: black;
+}
+.dragon {
+    background-color: mediumslateblue;
+    border-color: slateblue;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.fairy {
+    background-color: rgb(255, 136, 238);
+    border-color: rgb(255, 187, 238);
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.grass {
+    background-color: lime;
+    border-color: limegreen;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.shadow {
+    background-color: gray;
+    border-color: grey;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.unknown {
+    background-color: rgb(255, 255, 255);
+    border-color: black;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+
+
